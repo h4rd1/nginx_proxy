@@ -1,0 +1,27 @@
+version: '3'
+services:
+  nginx1:
+    container_name: nginx1
+    image: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx1/nginx.conf:/etc/nginx/nginx.conf
+  nginx2:
+    container_name: nginx2
+    image: nginx
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx2/nginx.conf:/etc/nginx/nginx.conf
+  app:
+    container_name: app
+    image: nginx
+    restart: always
+    volumes:
+      - ./app/nginx.conf:/etc/nginx/nginx.conf
+#volumes:
+
+
